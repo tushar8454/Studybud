@@ -25,6 +25,7 @@
 <div>
     <form method="POST" action="">
         {% csrf_token %}
+        {% comment %} it is bcz for looping to check the user {% endcomment %}
         {{form.as_p}}
                 <input type="submit" value="register"/>
     </form>

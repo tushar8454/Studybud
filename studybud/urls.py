@@ -26,5 +26,7 @@ urlpatterns = [
 
     # here we can register a path
     path('',include('base.urls')),
+    path('api/',include('base.api.urls')),
+   
   
 ]

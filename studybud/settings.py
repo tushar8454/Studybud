@@ -40,10 +40,19 @@ INSTALLED_APPS = [
     
     # here we can register our app like base
     'base.apps.BaseConfig', 
+    #for framework
+    'rest_framework',
+    # for api
+    "corsheaders",
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+
+#    for api access
+"corsheaders.middleware.CorsMiddleware",
+
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,7 +134,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 #here we can register the static file which means style in css or javascript files
-STATICFILES_DIRS=[
+STATICFILES_DIRS=[  
     BASE_DIR/'static'
 ]
 
@@ -136,3 +145,6 @@ STATIC_ROOT=[]
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# which site access the api
+CORS_ALLOW_ALL_ORIGINS=True
